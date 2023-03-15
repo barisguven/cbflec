@@ -1,0 +1,13 @@
+\frametitle{How to Use \textbf{cbflec}}
+    \begin{itemize}
+        \item \textbf{cbflec} offers two color options for the transition frame's background color
+        \item Insert \verb!\usetheme[blue]{cbflec}! for blue
+        \begin{itemize}
+            \item text color on tframes will be white
+        \end{itemize}
+        \item Or insert \verb|\usetheme[yellow]{cbflec}| for yellow
+        \begin{itemize}
+            \item text color on tframes will be black
+        \end{itemize}
+        \item Place \textit{beamerthemecbflec.sty} file in the same folder as your .tex file before calling it
+    \end{itemize}

@@ -1,0 +1,121 @@
+% a color-blind friendly simple beamer theme for lecture slides
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cbflec}[2023/03/14 color-blind friendly lecture slides]
+
+\RequirePackage{tikz}
+\RequirePackage[none]{hyphenat}
+\RequirePackage{ifthen}
+
+% color-blind friendly colors based on Wong (2011) [https://www.nature.com/articles/nmeth.1618]
+\definecolor{blue}{RGB}{0,114,178}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+\definecolor{purple}{RGB}{204,121,167}
+\definecolor{orange}{RGB}{230,159,0}
+
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{frametitle}{fg=blue}
+\setbeamercolor{framesubtitle}{fg=blue}
+\setbeamercolor{itemize item}{fg=blue}
+\setbeamercolor{itemize subitem}{fg=blue}
+\setbeamercolor{enumerate item}{fg=blue}
+\setbeamercolor{enumerate subitem}{fg=blue}
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{description item}{fg=red}
+\setbeamercolor{block title}{fg=black, bg=orange!75}
+\setbeamercolor{block body}{bg=orange!25}
+\setbeamercolor{block title example}{fg=black, bg=teal!75}
+\setbeamercolor{block body example}{bg=teal!25}
+
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[square]
+\setbeamertemplate{itemize subsubitem}[circle]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{} % disable navigation
+\setbeamertemplate{caption}{\insertcaption} % disable "Figure:" and "Table:" in the captions
+\setbeamertemplate{caption label separator}{}
+\setbeamertemplate{title page}{}
+\setbeamertemplate{frame title}{series=\bfseries}
+
+\defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
+\setbeamertemplate{description item}[align left]
+
+\newcommand{\pw}{\the\paperwidth}
+\newcommand{\ph}{\the\paperheight}
+
+% declaring transition frame background color options
+\newcommand{\tfcolor}{blue}
+\newcommand{\tftextcolor}{white}
+\DeclareOption{blue}{
+    \renewcommand{\tfcolor}{blue}
+    \renewcommand{\tftextcolor}{white}
+    }
+\DeclareOption{yellow}{
+    \renewcommand{\tfcolor}{yellow}
+    \renewcommand{\tftextcolor}{black}
+    }
+\ExecuteOptions{blue}
+\DeclareOption*{\PackageError{cbflec}{Unknown ‘\CurrentOption’}{Pass either blue or yellow}}
+\ProcessOptions\relax
+
+% title page background
+\setbeamertemplate{background}{
+    \begin{tikzpicture}
+        % set up the entire slide as the canvas
+        \useasboundingbox (0,0) rectangle (\pw,\ph);
+        \ifnum\thepage=1\relax
+            % title page
+            % draw the fills
+            \fill[color=blue] (0,\ph*0.5) rectangle (\pw,\ph);
+
+            % draw the actual text on the title page
+            \node[anchor=south, align=center, text width=\pw - 10pt, execute at begin node=\setlength{\baselineskip}{6ex}] at (\pw*0.5,\ph*0.5) {\color{white}\Huge\textbf{\inserttitle}};
+            \node[anchor=north east, align=center, text width=\pw - 10pt] at (\pw - 5pt,\ph*0.5) {\color{black}\large\insertsubtitle};
+            
+            \makeatletter
+            \ifthenelse{\NOT\equal{\beamer@shortauthor}{}}{
+                \node[anchor=north, align=center, execute at begin node=\setlength{\baselineskip}{10pt}] at (\pw/2,\ph/3) {\color{black}\LARGE\insertauthor};
+                \node[anchor=north, align=center] at (\pw/2,\ph/3 - 7ex) {\color{black}\normalsize\insertinstitute};
+                \node[anchor=north, align=center] at (\pw/2,\ph/3 - 12ex) {\color{black}\normalsize\insertdate};
+            }{
+                \ifthenelse{\NOT\equal{\beamer@shortinstitute}{}}{
+                    \node[anchor=north, align=center] at (\pw/2,\ph/3) {\color{black}\normalsize\insertinstitute};
+                    \node[anchor=north, align=center] at (\pw/2,\ph/3 - 7ex) {\color{black}\normalsize\insertdate};
+                }{
+                    \node[anchor=north, align=center] at (\pw/2,\ph/3) {\color{black}\normalsize\insertdate};
+                }
+            }
+            \makeatother
+        \else
+        \fi
+    \end{tikzpicture}
+}
+
+% Transition frame that contains the subsection title with additional text (possibly questions)
+\newenvironment{tframe}
+{   \hypersetup{linkcolor=\tftextcolor}
+    \setbeamercolor{background canvas}{bg=\tfcolor}
+    \setbeamercolor{normal text}{fg=\tftextcolor}
+    \usebeamercolor[fg]{normal text}
+    \begin{frame}[plain]
+        \Huge\insertsubsection\\\vspace{2ex}\large 
+}{
+    \end{frame}
+    \hypersetup{linkcolor=red}
+}
+
+% Subsection frame that contains the subsection title only
+% Uncomment the following lines if you prefer the subsection page frame over the transition frame (see below)
+% \AtBeginSubsection{\frame[plain]{\subsectionpage}}
+% \setbeamertemplate{subsection page}{
+%     \begin{tikzpicture}
+%         % set up the entire slide as the canvas
+%         \useasboundingbox (0,0) rectangle (\pw,\ph);
+%         \fill[color=blue] (-1,0) rectangle (\pw,\ph);
+%         \node[anchor=south, align=center, text width = \pw - 10pt, execute at begin node=\setlength{\baselineskip}{5ex}] at (\pw/2-1cm,\ph/2) {\color{white}\Huge\textbf{\insertsubsection}};
+%     \end{tikzpicture}   
+% }

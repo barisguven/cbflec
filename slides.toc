@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{A Simple Beamer Theme for Lectures}{1}{0}{1}
+\beamer@subsectionintoc {1}{1}{Colors}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Use Transition Frames Along with Subsections}{8}{0}{1}
+\beamer@subsectionintoc {1}{3}{How to Use}{12}{0}{1}
