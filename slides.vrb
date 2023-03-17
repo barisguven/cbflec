@@ -9,5 +9,7 @@
         \begin{itemize}
             \item text color on tframes will be black
         \end{itemize}
+        \item \textbf{cbflec} also offers three options for itemize item markers: circle (default), square, and triangle
+        \item Insert \verb!\usetheme[blue,square]{cbflec}! to get blue transition background and square item markers (the order of parameters does not matter)
         \item Place \textit{beamerthemecbflec.sty} file in the same folder as your .tex file before calling it
     \end{itemize}

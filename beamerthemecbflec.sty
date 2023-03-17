@@ -1,6 +1,6 @@
 % a color-blind friendly simple beamer theme for lecture slides
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{cbflec}[2023/03/14 color-blind friendly lecture slides]
+\ProvidesPackage{cbflec}[2023/03/16 color-blind friendly lecture slides]
 
 \RequirePackage{tikz}
 \RequirePackage[none]{hyphenat}
@@ -14,6 +14,7 @@
 \definecolor{purple}{RGB}{204,121,167}
 \definecolor{orange}{RGB}{230,159,0}
 
+% setting colors
 \setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{normal text}{fg=black}
 \setbeamercolor{section in toc}{fg=black}
@@ -21,8 +22,10 @@
 \setbeamercolor{framesubtitle}{fg=blue}
 \setbeamercolor{itemize item}{fg=blue}
 \setbeamercolor{itemize subitem}{fg=blue}
+\setbeamercolor{itemize subsubitem}{fg=blue}
 \setbeamercolor{enumerate item}{fg=blue}
 \setbeamercolor{enumerate subitem}{fg=blue}
+\setbeamercolor{enumerate subsubitem}{fg=blue}
 \setbeamercolor{alerted text}{fg=red}
 \setbeamercolor{description item}{fg=red}
 \setbeamercolor{block title}{fg=black, bg=orange!75}
@@ -30,9 +33,7 @@
 \setbeamercolor{block title example}{fg=black, bg=teal!75}
 \setbeamercolor{block body example}{bg=teal!25}
 
-\setbeamertemplate{itemize item}[triangle]
-\setbeamertemplate{itemize subitem}[square]
-\setbeamertemplate{itemize subsubitem}[circle]
+% style
 \setbeamertemplate{blocks}[rounded][shadow=true]
 \setbeamertemplate{footline}[frame number]
 \setbeamertemplate{navigation symbols}{} % disable navigation
@@ -40,7 +41,6 @@
 \setbeamertemplate{caption label separator}{}
 \setbeamertemplate{title page}{}
 \setbeamertemplate{frame title}{series=\bfseries}
-
 \defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
 \setbeamertemplate{description item}[align left]
 
@@ -58,9 +58,26 @@
     \renewcommand{\tfcolor}{yellow}
     \renewcommand{\tftextcolor}{black}
     }
-\ExecuteOptions{blue}
+% declaring itemize item marker shapes
+\newcommand{\ishape}{circle}
+\DeclareOption{circle}{
+    \renewcommand{\ishape}{circle}
+    }
+\DeclareOption{square}{
+    \renewcommand{\ishape}{square}
+    }
+\DeclareOption{triangle}{
+    \renewcommand{\ishape}{triangle}
+    }
+\ExecuteOptions{blue, circle}
 \DeclareOption*{\PackageError{cbflec}{Unknown ‘\CurrentOption’}{Pass either blue or yellow}}
+%\DeclareOption*{\PackageError{cbflec}{Unknown ‘\CurrentOption’}{Pass either circle, square, or triangle}}
 \ProcessOptions\relax
+
+% style of itemize item markers
+\setbeamertemplate{itemize item}[\ishape]
+\setbeamertemplate{itemize subitem}[\ishape]
+\setbeamertemplate{itemize subsubitem}[\ishape]
 
 % title page background
 \setbeamertemplate{background}{

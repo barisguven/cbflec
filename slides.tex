@@ -1,5 +1,5 @@
 \documentclass[11pt, aspectratio=43]{beamer}
-\usetheme[blue]{cbflec}% loading the custom theme
+\usetheme[blue,square]{cbflec}% loading the custom theme
 
 % Auxillary packages that you may use; not necessary for the custom theme
 \usepackage{charter}
@@ -67,7 +67,7 @@ urlcolor=purple,
         \item Title page is inspired by \href{https://blog.hamaluik.ca/posts/better-beamer-themes/}{Kenton Hamaluik}
         \item I don't like to have author and institution information on lecture slides
         \item My students know these already!
-        \item Yet \textbf{cbflec} allows you to have them on the title page. Try!
+        \item But \textbf{cbflec} allows you to have them on the title page. Try!
         \item It also works fine with aspect ratio 16:9, which I prefer for my lectures (\verb!\documentclass[aspectratio=169]{beamer}!)
     \end{itemize}
 \end{frame}
@@ -108,7 +108,7 @@ urlcolor=purple,
         \item Use \textbf{hyperref} package to create bookmarks 
         \item Call the \verb!tframe! environment right after \verb|\subsection{subsection title}|
         \item New frame shows the subsection title automatically as above
-        \item You can insert more text to tframes
+        \item You can insert more text to tframes as follows:
         \begin{verbatim}
             \subsection{Questions}
             \begin{tframe}
@@ -165,6 +165,8 @@ urlcolor=purple,
         \begin{itemize}
             \item text color on tframes will be black
         \end{itemize}
+        \item \textbf{cbflec} also offers three options for itemize item markers: circle (default), square, and triangle
+        \item Insert \verb!\usetheme[blue,square]{cbflec}! to get blue transition background and square item markers (the order of parameters does not matter)
         \item Place \textit{beamerthemecbflec.sty} file in the same folder as your .tex file before calling it
     \end{itemize}
 \end{frame}

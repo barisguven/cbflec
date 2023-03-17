@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.12)  14 MAR 2023 21:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.12)  16 MAR 2023 21:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -594,7 +594,7 @@ Package: amsthm 2020/05/29 v2.20.6
 LaTeX Warning: You have requested package `beamerthemecbflec',
                but the package provides `cbflec'.
 
-Package: cbflec 2023/03/14 colorblind-friendly lecture slides
+Package: cbflec 2023/03/16 color-blind friendly lecture slides
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
@@ -846,6 +846,11 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <12> not available
 ] [2
 
 ]
+<cbf_colors.png, id=46, 694.595pt x 323.2075pt>
+File: cbf_colors.png Graphic file (type png)
+<use cbf_colors.png>
+Package pdftex.def Info: cbf_colors.png  used on input line 41.
+(pdftex.def)             Requested size: 277.83307pt x 129.2807pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -857,13 +862,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 41.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
-)
-<cbf_colors.png, id=46, 694.595pt x 323.2075pt>
-File: cbf_colors.png Graphic file (type png)
-<use cbf_colors.png>
-Package pdftex.def Info: cbf_colors.png  used on input line 41.
-(pdftex.def)             Requested size: 277.83307pt x 129.2807pt.
- [3
+) [3
 
  </Users/barisguven/My Documents/beamer_custom_theme/cbf_colors.png>] [4
 
@@ -901,7 +900,7 @@ File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 
  (/Users/barisguven/My Documents/beamer_custom_theme/slides.vrb)
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 170.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 172.
  [13
 
 ]
@@ -919,18 +918,18 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: BCF0F57817C4482B8132612B39B6AFDF;721.
  ) 
 Here is how much of TeX's memory you used:
- 23875 strings out of 478994
- 458588 string characters out of 5858184
- 738273 words of memory out of 5000000
- 40794 multiletter control sequences out of 15000+600000
+ 23881 strings out of 478994
+ 458687 string characters out of 5858184
+ 738284 words of memory out of 5000000
+ 40800 multiletter control sequences out of 15000+600000
  416786 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,14n,132p,512b,879s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb>
-Output written on "/Users/barisguven/My Documents/beamer_custom_theme/slides.pdf" (13 pages, 508923 bytes).
+ 131i,14n,132p,519b,879s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb>
+Output written on "/Users/barisguven/My Documents/beamer_custom_theme/slides.pdf" (13 pages, 501809 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
+ 176 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
  32 named destinations out of 1000 (max. 500000)
  122 words of extra memory for PDF output out of 10000 (max. 10000000)
 
