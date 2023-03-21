@@ -58,6 +58,7 @@
     \renewcommand{\tfcolor}{yellow}
     \renewcommand{\tftextcolor}{black}
     }
+\DeclareOption*{\PackageError{cbflec}{Unknown ‘\CurrentOption’}{Pass either blue or yellow}}
 % declaring itemize item marker shapes
 \newcommand{\ishape}{circle}
 \DeclareOption{circle}{
@@ -69,9 +70,8 @@
 \DeclareOption{triangle}{
     \renewcommand{\ishape}{triangle}
     }
+\DeclareOption*{\PackageError{cbflec}{Unknown ‘\CurrentOption’}{Pass either circle, square, or triangle}}
 \ExecuteOptions{blue, circle}
-\DeclareOption*{\PackageError{cbflec}{Unknown ‘\CurrentOption’}{Pass either blue or yellow}}
-%\DeclareOption*{\PackageError{cbflec}{Unknown ‘\CurrentOption’}{Pass either circle, square, or triangle}}
 \ProcessOptions\relax
 
 % style of itemize item markers
@@ -119,7 +119,7 @@
     \setbeamercolor{normal text}{fg=\tftextcolor}
     \usebeamercolor[fg]{normal text}
     \begin{frame}[plain]
-        \Huge\insertsubsection\\\vspace{2ex}\large 
+        \Huge\insertsubsection\\\vspace{2ex}\Large 
 }{
     \end{frame}
     \hypersetup{linkcolor=red}
